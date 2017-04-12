@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Book Store</title>
+
+    <link rel="stylesheet" th:href="@{/css/home.css}" href="css/layout.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" th:href="@{/css/menu.css}" href="css/menu.css" type="text/css" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+
+        <ul id="nav">
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a href="#" class="current">HTML/CSS</a>
+                <ul class="subs">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">jQuery/JS</a>
+                <ul class="subs">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">PHP</a></li>
+            <li><a href="#">MySQL</a></li>
+            <li><a href="#">Admin</a></li>
+        </ul>
+
+    </div>
+</div>
+
+<footer>
+    <h2>Book Store</h2>
+    <a th:href="@{/logout}" class="stuts">Everything done? <span>Logout</span></a>
+</footer>
+</body>
+</html>

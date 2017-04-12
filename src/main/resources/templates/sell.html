@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Sell</title>
+    <link rel="stylesheet" th:href="@{/css/sell.css}" href="css/table.css" type="text/css"/>
+</head>
+<body>
+<div class="form-style-5">
+    <form th:action="@{/sell}" th:method="get">
+        <fieldset>
+            <legend><span class="number">1</span> Book Info</legend>
+            <input type="text" name="tile" th:value="${book.title}" placeholder="Title *" disabled = "disabled"/>
+            <input type="text" name="author" th:value="${book.author}" placeholder="Author *" disabled = "disabled"/>
+            <input type="text" name="genre" th:value="${book.genre}" placeholder="Genre *" disabled = "disabled"/>
+            <input type="text" name="quantity" th:value="${book.quantity}" placeholder="Stock *" disabled = "disabled"/>
+            <input type="text" name="price" th:value="${book.price}" placeholder="Price *" disabled = "disabled"/>
+        </fieldset>
+    </form>
+    <form th:action="@{/sell}" th:method="post">
+        <fieldset>
+            <legend><span class="number">2</span> Delivery Info</legend>
+            <input type="number"  th:onclick="'getTotal(\''+${book.price}+'\')'" name="sellQuantity" id="sellQuantity" placeholder="Quantity" required="required" th:min="1" th:max="${book.quantity}"/>
+            <textarea name="deliver" placeholder="Deliver to" required="required"></textarea>
+            <legend><span class="number">3</span> Total Price</legend>
+            <input type="text" id="totalPrice"  placeholder="Clik on calculate to view price!"  disabled = "disabled"/>
+        </fieldset>
+        <input type="submit" onclick="'getQ()'" value="Apply" />
+        <input type="hidden" name="titleh" th:value="${book.title}" />
+        <input type="hidden" name="authorh" th:value="${book.author}" />
+    </form>
+</div>
+<script src="js/sell.js"></script>
+</body>
+</html>

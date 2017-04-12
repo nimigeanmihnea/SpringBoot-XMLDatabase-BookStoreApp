@@ -1,0 +1,41 @@
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Table Style</title>
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}" href="css/table.css" type="text/css"/>
+</head>
+
+<body>
+<div class="table-title">
+    <h3>Search result</h3>
+</div>
+<form th:action="@{/view}" th:method="get">
+<table class="table-fill">
+    <thead>
+    <tr>
+        <th class="text-left">ID</th>
+        <th class="text-left">Title</th>
+        <th class="text-left">Author</th>
+        <th class="text-left">Genre</th>
+        <th class="text-left">Quantity</th>
+        <th class="text-left">Price</th>
+        <th class="text-left">Sell</th>
+    </tr>
+    </thead>
+    <tbody class="table-hover">
+    <tr th:each="book : ${result}">
+        <td class="text-left" th:text="${book.id}">ID</td>
+        <td class="text-left" th:text="${book.title}">Title</td>
+        <td class="text-left" th:text="${book.author}">Author</td>
+        <td class="text-left" th:text="${book.genre}">Genre</td>
+        <td class="text-left" th:text="${book.quantity}">Quantity</td>
+        <td class="text-left" th:text="${book.price}">Price</td>
+        <td><a th:href="@{/sell(param=${book.id})}">Sell</a></td>
+        <!--<input type="hidden" name="book" th:value="${book}"/>-->
+    </tr>
+    </tbody>
+</table>
+</form>
+</body>
+</html>

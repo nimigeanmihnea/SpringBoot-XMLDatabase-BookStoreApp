@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Users>
+    <User id="1">
+        <name>Nimigean Mihnea</name>
+        <email>x@gmail.com</email>
+        <username>admin</username>
+        <password>admin</password>
+        <role>ROLE_ADMIN</role>
+    </User>
+</Users>
