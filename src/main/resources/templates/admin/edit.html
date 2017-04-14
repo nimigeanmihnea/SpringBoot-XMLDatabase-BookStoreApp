@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit</title>
+    <link rel="stylesheet" th:href="@{/css/sell.css}" href="css/table.css" type="text/css"/>
+</head>
+<body>
+<div class="form-style-5">
+    <form th:action="@{/admin/edit}" th:method="get">
+        <fieldset>
+            <legend><span class="number">1</span> Book Info</legend>
+            <input type="text" name="tile" th:value="${book.title}" placeholder="Title *" readonly="readonly"/>
+            <input type="text" name="author" th:value="${book.author}" placeholder="Author *" readonly="readonly"/>
+            <input type="text" name="genre" th:value="${book.genre}" placeholder="Genre *" readonly="readonly"/>
+            <input type="text" name="quantity" th:value="${book.quantity}" placeholder="Stock *" readonly="readonly" />
+            <input type="text" name="price" th:value="${book.price}" placeholder="Price *" readonly="readonly" />
+        </fieldset>
+    </form>
+    <form th:action="@{/admin/edit}" th:method="post">
+        <fieldset>
+            <legend><span class="number">2</span>Update info</legend>
+            <input type="hidden" name="titleh" th:value="${book.title}" />
+            <input type="hidden" name="authorh" th:value="${book.author}" />
+            <input type="text" name="quantityh" th:value="${book.quantity}" placeholder="Stock *" required="required" pattern="[0-9]+"/>
+            <input type="text" name="priceh" th:value="${book.price}" placeholder="Price *" required="required" pattern="[+-]?([0-9]*[.])?[0-9]+"/>
+            <input type="submit" value="Apply" />
+        </fieldset>
+    </form>
+</div>
+<script src="js/edit.js"></script>
+</body>
+</html>

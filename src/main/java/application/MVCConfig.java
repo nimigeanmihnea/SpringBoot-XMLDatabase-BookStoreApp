@@ -30,15 +30,19 @@ public class MVCConfig extends WebMvcConfigurerAdapter{
         registry.addViewController("/admin").setViewName("admin");
         registry.addViewController("/view").setViewName("view");
         registry.addViewController("/sell").setViewName("sell");
+        registry.addViewController("/admin").setViewName("admin");
+        registry.addViewController("/403").setViewName("403");
+        registry.addViewController("/admin/view").setViewName("admin/view");
+        registry.addViewController("/admin/edit").setViewName("admin/edit");
     }
 
-    @Bean
-    public ViewResolver adminResolver(){
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-
-        resolver.setPrefix("/templates/admin/**");
-        resolver.setSuffix(".html");
-
-        return resolver;
-    }
+//    @Bean
+//    public ViewResolver adminResolver(){
+//        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+//
+//        resolver.setPrefix("/templates/admin/**");
+//        resolver.setSuffix(".html");
+//
+//        return resolver;
+//    }
 }

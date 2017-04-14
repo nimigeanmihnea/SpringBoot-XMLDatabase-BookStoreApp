@@ -108,11 +108,6 @@ public class SaleController {
            sale.setUser(user);
            sale.setBuyer(request.getParameter("deliver"));
 
-           JAXBContext context = JAXBContext.newInstance(Sales.class);
-           Marshaller marshaller = context.createMarshaller();
-           marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-
            sales = controller.getSales();
            List<Sale> saleList = sales.getSales();
            saleList.add(sale);

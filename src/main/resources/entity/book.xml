@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Books>
     <Book id="1">
-        <title>The Shining</title>
-        <author>Stephen King</author>
-        <genre>Science-Fiction</genre>
-        <quantity>215</quantity>
-        <price>70.0</price>
-    </Book>
-    <Book id="2">
         <title>The World as Will and Representation</title>
         <author>Arthur Schopenhauer</author>
         <genre>Philosophy</genre>
         <quantity>23</quantity>
         <price>199.89</price>
     </Book>
-    <Book id="3">
+    <Book id="2">
         <title>Trilogia Cunoasterii</title>
         <author>Lucian Blaga</author>
         <genre>Philosophy</genre>
         <quantity>215</quantity>
         <price>59.99</price>
     </Book>
-    <Book id="4">
+    <Book id="3">
         <title>When Nietzsche Wept</title>
         <author>Irvin D. Yalom</author>
         <genre>Novel</genre>
-        <quantity>100</quantity>
+        <quantity>96</quantity>
         <price>36.0</price>
     </Book>
 </Books>

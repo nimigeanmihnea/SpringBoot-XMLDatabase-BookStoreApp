@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="utf-8" />
     <title>Book Store</title>
@@ -33,7 +33,7 @@
             </li>
             <li><a href="#">PHP</a></li>
             <li><a href="#">MySQL</a></li>
-            <li><a th:href="@{/admin}" sec:authorize="hasRole('ADMIN')">Admin</a></li>
+            <li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/admin}">Admin</a></li>
         </ul>
     </div>
     <div class="column">
@@ -48,7 +48,8 @@
 </div>
 
 <footer>
-    <h2>Book Store<a th:href="@{/logout}" class="stuts"> <span>Logout</span></a></h2>
+    <h2>Book Store</h2>
+    <a th:href="@{/logout}" class="stuts">Everything done? <span>Logout</span></a>
 </footer>
 <script src="js/classie.js"></script>
 <script src="js/uisearch.js"></script>

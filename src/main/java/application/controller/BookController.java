@@ -26,6 +26,7 @@ import java.util.List;
  */
 
 @Controller
+@SuppressWarnings(value = "unchecked")
 public class BookController {
 
     private File file = new File("src/main/resources/entity/book.xml");
@@ -84,4 +85,46 @@ public class BookController {
         return "/view";
     }
 
+    @RequestMapping(value = "/admin/view", method = RequestMethod.GET)
+    public String viewBooksAdmin(@PathParam("search") String search, Model model){
+        search = search.replaceAll("_", " ");
+        try{
+            UnmarshalController controller = new UnmarshalController();
+            books = controller.getBooks();
+        }catch (JAXBException e){}
+
+        List<Book> result = new ArrayList<Book>();
+        List<Book> bookList = books.getBooks();
+
+        for (Book aux:bookList) {
+            SearchValidator validator = new SearchValidator(aux, search);
+            if (validator.validate()) {
+                result.add(aux);
+            }
+        }
+
+        model.addAttribute("result",result);
+        return "/admin/view";
+    }
+
+    @RequestMapping(value = "/admin/delete", method = RequestMethod.GET)
+    public String delete(@PathParam("param") String param) throws JAXBException {
+        Book book = null;
+        long id = Long.parseLong(param);
+        UnmarshalController controller = new UnmarshalController();
+        books = controller.getBooks();
+        List<Book> bookList = books.getBooks();
+        for (Book aux: bookList) {
+            if(aux.getId() == id) {
+                book = aux;
+                break;
+            }
+        }
+        if(book != null){
+            bookList.remove(book);
+            books.setBooks(bookList);
+            MarshalController.setBooks(books);
+            return "redirect:/admin";
+        }else return "redirect/error";
+    }
 }

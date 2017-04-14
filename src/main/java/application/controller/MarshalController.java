@@ -21,6 +21,7 @@ public class MarshalController {
         File file = new File("src/main/resources/entity/book.xml");
         JAXBContext context = JAXBContext.newInstance(Books.class);
         Marshaller marshaller = context.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         if(file.exists() && !file.isDirectory()){
             marshaller.marshal(books,file);
         }
@@ -30,6 +31,7 @@ public class MarshalController {
         File file = new File("src/main/resources/entity/user.xml");
         JAXBContext context = JAXBContext.newInstance(Users.class);
         Marshaller marshaller = context.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         if(file.exists() && !file.isDirectory()){
             marshaller.marshal(users,file);
         }
@@ -39,6 +41,7 @@ public class MarshalController {
         File file = new File("src/main/resources/entity/sale.xml");
         JAXBContext context = JAXBContext.newInstance(Sales.class);
         Marshaller marshaller = context.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         if(file.exists() && !file.isDirectory()){
             marshaller.marshal(sales,file);
         }

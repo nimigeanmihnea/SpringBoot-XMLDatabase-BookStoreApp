@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 
 @Configuration
 @EnableWebSecurity
-public class SecureLogin extends WebSecurityConfigurerAdapter {
+public class  SecureLogin extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserDetailsService userCredentialsData;
@@ -32,14 +32,15 @@ public class SecureLogin extends WebSecurityConfigurerAdapter {
         httpSecurity.cors().disable();
         httpSecurity.authorizeRequests().antMatchers("/", "/resources/**", "/templates/**", "/static/**",
                 "/css/**", "/js/**").permitAll()
-                .antMatchers("/admin/*").hasRole("ADMIN")
+                .antMatchers("/admin/*","/admin").hasRole("ADMIN")
                 .antMatchers("/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().defaultSuccessUrl("/home")
                 .loginPage("/login").usernameParameter("user").passwordParameter("pass").permitAll()
                 .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login").permitAll();
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login").permitAll()
+                .and().exceptionHandling().accessDeniedPage("/403");
     }
 
     @Autowired

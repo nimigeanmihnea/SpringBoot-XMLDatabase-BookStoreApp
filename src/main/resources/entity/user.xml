@@ -7,4 +7,11 @@
         <password>admin</password>
         <role>ROLE_ADMIN</role>
     </User>
+    <User id="2">
+        <name>Nimigean Mihnea</name>
+        <email>x@gmail.com</email>
+        <username>user</username>
+        <password>user</password>
+        <role>ROLE_USER</role>
+    </User>
 </Users>

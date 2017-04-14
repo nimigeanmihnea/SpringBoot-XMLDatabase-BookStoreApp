@@ -13,21 +13,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-@RequestMapping(value = "/home")
 public class SearchController {
 
     @Autowired
     private Books books;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String show(){
         return "/home";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/home", method = RequestMethod.POST)
     public String search(HttpServletRequest request){
         String search = request.getParameter("search");
         return "redirect:/view?search="+search.replaceAll(" ","_");
+    }
 
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String showAdmin(){ return "/admin"; }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.POST)
+    public String searchAdmin(HttpServletRequest request){
+        String search = request.getParameter("search");
+        return "redirect:/admin/view?search="+search.replaceAll(" ","_");
     }
 }

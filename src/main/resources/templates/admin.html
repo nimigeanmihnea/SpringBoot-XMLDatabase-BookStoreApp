@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="utf-8" />
     <title>Book Store</title>
 
     <link rel="stylesheet" th:href="@{/css/home.css}" href="css/layout.css" type="text/css" media="screen"/>
     <link rel="stylesheet" th:href="@{/css/menu.css}" href="css/menu.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" th:href="@{/css/component.css}" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" type="text/css" href="css/default.css" />
 </head>
 <body>
 <div class="container">
@@ -13,7 +15,7 @@
 
         <ul id="nav">
             <li><a th:href="@{/home}">Home</a></li>
-            <li><a href="#" class="current">HTML/CSS</a>
+            <li><a href="#" class="current">Sell</a>
                 <ul class="subs">
                     <li><a href="#">Link 1</a></li>
                     <li><a href="#">Link 2</a></li>
@@ -31,9 +33,16 @@
             </li>
             <li><a href="#">PHP</a></li>
             <li><a href="#">MySQL</a></li>
-            <li><a href="#">Admin</a></li>
         </ul>
-
+    </div>
+    <div class="column">
+        <div id="sb-search" class="sb-search">
+            <form th:action="@{/admin}" th:method="post">
+                <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search"/>
+                <input class="sb-search-submit" type="submit" value=""/>
+                <span class="sb-icon-search"></span>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -41,5 +50,10 @@
     <h2>Book Store</h2>
     <a th:href="@{/logout}" class="stuts">Everything done? <span>Logout</span></a>
 </footer>
+<script src="js/classie.js"></script>
+<script src="js/uisearch.js"></script>
+<script>
+    new UISearch( document.getElementById( 'sb-search' ) );
+</script>
 </body>
 </html>
