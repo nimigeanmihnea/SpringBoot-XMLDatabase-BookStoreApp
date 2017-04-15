@@ -21,4 +21,11 @@
         <quantity>96</quantity>
         <price>36.0</price>
     </Book>
+    <Book id="951">
+        <title>The Shining</title>
+        <author>Stephen King</author>
+        <genre>Science-Fiction</genre>
+        <quantity>100</quantity>
+        <price>70.0</price>
+    </Book>
 </Books>

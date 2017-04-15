@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit</title>
+    <link rel="stylesheet" th:href="@{/css/sell.css}" href="css/table.css" type="text/css"/>
+</head>
+<body>
+<div class="form-style-5">
+    <form th:action="@{/admin/new}" th:method="post">
+        <fieldset>
+            <legend><span class="number">1</span> Book Info</legend>
+            <input type="text" name="name" placeholder="Name *" required="required"/>
+            <input type="email" name="email" placeholder="Email *" required="required"/>
+            <input type="text" name="username" placeholder="Username *" required="required"/>
+            <input type="text" name="password" placeholder="Password *"  required="required"/>
+            <!--<input type="text" name="role" placeholder="Role *"  required="required" pattern="[+-]?([0-9]*[.])?[0-9]+"/>-->
+            <select name="role">
+                <option value="ROLE_USER">USER</option>
+                <option value="ROLE_ADMIN">ADMIN</option>
+            </select>
+            <input type="submit" value="Apply" />
+        </fieldset>
+    </form>
+</div>
+<script src="js/edit.js"></script>
+</body>
+</html>

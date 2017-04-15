@@ -2,6 +2,7 @@ package application.controller;
 
 import application.entity.Book;
 import application.repository.Books;
+import application.validator.BookValidator;
 import application.validator.SearchValidator;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import javax.xml.bind.Marshaller;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 /**
@@ -29,42 +31,39 @@ import java.util.List;
 @SuppressWarnings(value = "unchecked")
 public class BookController {
 
-    private File file = new File("src/main/resources/entity/book.xml");
-
     @Autowired
     private Books books;
 
-    private static ArrayList<Book> bookArrayList = new ArrayList<Book>();
+    @RequestMapping(value = "/admin/add", method = RequestMethod.GET)
+    public String show(){ return "/admin/add"; }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String convertToXml(HttpServletRequest request) throws JAXBException {
+    @RequestMapping(value = "/admin/add", method = RequestMethod.POST)
+    public String add(HttpServletRequest request) throws JAXBException {
+        Random random = new Random();
+        long id = random.nextInt(1000) + 1;
+        Book book = new Book();
+        book.setId(id);
+        book.setTitle(request.getParameter("title"));
+        book.setAuthor(request.getParameter("author"));
+        book.setGenre(request.getParameter("genre"));
+        book.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+        book.setPrice(Float.parseFloat(request.getParameter("price")));
 
-        if(file.exists() && ! file.isDirectory()) {
-            JAXBContext context = JAXBContext.newInstance(Books.class);
+        BookValidator validator = new BookValidator(book);
 
-            Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            //TODO: VERIFICA DACA NU EXISTA ID DE CARTE
-            Book book = new Book();
-            book.setId(Long.parseLong(request.getParameter("id")));
-            book.setTitle(request.getParameter("title"));
-            book.setAuthor(request.getParameter("author"));
-            book.setGenre(request.getParameter("genre"));
-            book.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-            book.setPrice(Float.parseFloat(request.getParameter("price")));
-
-            Books books = new Books();
-            books.setBooks(bookArrayList);
-
-            books.getBooks().add(book);
-
-            marshaller.marshal(books, file);
-        }
-        return "redirect:/home";
+        if(validator.validate()){
+            UnmarshalController controller = new UnmarshalController();
+            books = controller.getBooks();
+            List<Book> bookList = books.getBooks();
+            bookList.add(book);
+            books.setBooks(bookList);
+            MarshalController.setBooks(books);
+            return "redirect:/admin";
+        }else return "redirect:/error";
     }
 
     @RequestMapping(value = "/view", method = RequestMethod.GET)
-    public String viewBooks(@PathParam("search") String search, Model model){
+    public String view(@PathParam("search") String search, Model model){
         search = search.replaceAll("_", " ");
         try{
             UnmarshalController controller = new UnmarshalController();
@@ -125,6 +124,6 @@ public class BookController {
             books.setBooks(bookList);
             MarshalController.setBooks(books);
             return "redirect:/admin";
-        }else return "redirect/error";
+        }else return "redirect:/error";
     }
 }

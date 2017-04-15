@@ -14,4 +14,11 @@
         <password>user</password>
         <role>ROLE_USER</role>
     </User>
+    <User id="224">
+        <name>Test Edit</name>
+        <email>test.edit@gmail.com</email>
+        <username>testedit</username>
+        <password>test</password>
+        <role>ROLE_USER</role>
+    </User>
 </Users>

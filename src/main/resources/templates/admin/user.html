@@ -1,0 +1,41 @@
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Table Style</title>
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}" href="css/table.css" type="text/css"/>
+</head>
+
+<body>
+<div class="table-title">
+    <h3>Search result</h3>
+</div>
+<form th:action="@{/admin/user}" th:method="get">
+    <table class="table-fill">
+        <thead>
+        <tr>
+            <th class="text-left">ID</th>
+            <th class="text-left">Name</th>
+            <th class="text-left">Email</th>
+            <th class="text-left">Username</th>
+            <th class="text-left">Role</th>
+            <th class="text-left">Edit</th>
+            <th class="text-left">Delete</th>
+        </tr>
+        </thead>
+        <tbody class="table-hover">
+        <tr th:each="user : ${result}">
+            <td class="text-left" th:text="${user.id}">ID</td>
+            <td class="text-left" th:text="${user.name}">Name</td>
+            <td class="text-left" th:text="${user.email}">Email</td>
+            <td class="text-left" th:text="${user.username}">Username</td>
+            <td class="text-left" th:text="${user.role}">Role</td>
+            <td><a th:href="@{/admin/edituser(param=${user.id})}">Edit</a></td>
+            <td><a th:href="@{/admin/deleteuser(param=${user.id})}">Delete</a></td>
+            <!--<input type="hidden" name="book" th:value="${book}"/>-->
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

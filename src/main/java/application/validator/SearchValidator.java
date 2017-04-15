@@ -1,6 +1,9 @@
 package application.validator;
 
 import application.entity.Book;
+import application.entity.User;
+
+import javax.jws.soap.SOAPBinding;
 
 /**
  * Created by MIHONE on 4/10/2017.
@@ -10,11 +13,32 @@ public class SearchValidator {
 
     private String search;
     private Book book;
+    private User user;
 
     public SearchValidator(Book book, String search){
         this.book = book;
         this.search = search;
     }
+    public SearchValidator(User user, String search){
+        this.user = user;
+        this.search = search;
+    }
+
+    public boolean validateUser(){
+        return this.containsUser() || this.lowerCaseUser() || this.upperCaseUser();
+    }
+    private boolean containsUser(){
+        return user.getUsername().contains(search) || user.getEmail().contains(search) || user.getName().contains(search);
+    }
+
+    private boolean lowerCaseUser(){
+        return user.getUsername().toLowerCase().contains(search) || user.getEmail().toLowerCase().contains(search) || user.getName().toLowerCase().contains(search);
+    }
+
+    private boolean upperCaseUser(){
+        return user.getUsername().toUpperCase().contains(search) || user.getEmail().toUpperCase().contains(search) || user.getName().toUpperCase().contains(search);
+    }
+
     public boolean validate(){
         return this.contains() || this.lowerCase() || this.upperCase();
     }

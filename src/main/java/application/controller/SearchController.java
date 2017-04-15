@@ -35,6 +35,10 @@ public class SearchController {
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public String searchAdmin(HttpServletRequest request){
         String search = request.getParameter("search");
-        return "redirect:/admin/view?search="+search.replaceAll(" ","_");
+        String option = request.getParameter("option");
+        if(option.equalsIgnoreCase("book"))
+            return "redirect:/admin/view?search="+search.replaceAll(" ","_");
+        else
+            return "redirect:/admin/user?search="+search.replaceAll(" ", "_");
     }
 }

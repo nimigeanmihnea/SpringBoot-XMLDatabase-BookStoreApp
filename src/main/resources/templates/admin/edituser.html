@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit</title>
+    <link rel="stylesheet" th:href="@{/css/sell.css}" href="css/table.css" type="text/css"/>
+</head>
+<body>
+<div class="form-style-5">
+    <form th:action="@{/admin/edituser}" th:method="get">
+        <fieldset>
+            <legend><span class="number">1</span> Book Info</legend>
+            <input type="text" name="name" th:value="${user.name}" placeholder="Name *" readonly="readonly"/>
+            <input type="text" name="email" th:value="${user.email}" placeholder="Email *" readonly="readonly"/>
+            <input type="text" name="username" th:value="${user.username}" placeholder="Username *" readonly="readonly"/>
+            <input type="text" name="role" th:value="${user.role}" placeholder="Role *"  readonly="readonly"/>
+        </fieldset>
+    </form>
+    <form th:action="@{/admin/edituser}" th:method="post">
+        <fieldset>
+            <legend><span class="number">2</span>Update info</legend>
+            <input type="hidden" name="usernameh" th:value="${user.username}" />
+            <input type="text" name="nameh"  th:value="${user.name}" placeholder="Name *" required="required"/>
+            <input type="email" name="emailh" th:value="${user.email}" placeholder="Email *" required="required"/>
+            <input type="text" name="usernameht" th:value="${user.username}" placeholder="Username *" required="required"/>
+            <input type="text" name="roleh" th:value="${user.role}" placeholder="Role *" required="required"/>
+            <input type="submit" value="Apply" />
+        </fieldset>
+    </form>
+</div>
+<script src="js/edit.js"></script>
+</body>
+</html>

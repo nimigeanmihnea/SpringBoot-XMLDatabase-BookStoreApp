@@ -14,7 +14,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
  */
 
 @SpringBootApplication
-@EnableAutoConfiguration
 public class Program extends SpringBootServletInitializer {
 
     @Autowired

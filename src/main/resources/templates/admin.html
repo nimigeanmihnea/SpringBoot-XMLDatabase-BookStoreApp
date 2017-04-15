@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8" />
     <title>Book Store</title>
@@ -15,24 +16,10 @@
 
         <ul id="nav">
             <li><a th:href="@{/home}">Home</a></li>
-            <li><a href="#" class="current">Sell</a>
-                <ul class="subs">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                </ul>
-            </li>
-            <li><a href="#">jQuery/JS</a>
-                <ul class="subs">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                </ul>
-            </li>
-            <li><a href="#">PHP</a></li>
-            <li><a href="#">MySQL</a></li>
+            <li><a th:href="@{admin/add}" class="current">Add book</a></li>
+            <li><a th:href="@{admin/new}" class="current">Add user</a></li>
+            <li><a href="#">PDF Report</a></li>
+            <li><a href="#">CSV Report</a></li>
         </ul>
     </div>
     <div class="column">
@@ -41,6 +28,10 @@
                 <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search"/>
                 <input class="sb-search-submit" type="submit" value=""/>
                 <span class="sb-icon-search"></span>
+                <select name="option">
+                    <option value="book">Book</option>
+                    <option value="user">User</option>
+                </select>
             </form>
         </div>
     </div>
