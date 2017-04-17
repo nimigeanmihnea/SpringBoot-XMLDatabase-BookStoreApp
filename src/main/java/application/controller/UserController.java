@@ -56,7 +56,7 @@ public class UserController {
             users.setUsers(userList);
             MarshalController.setUsers(users);
             return "redirect:/admin";
-        }else return "redirect:/error";
+        }else return "redirect:/errorpage";
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
@@ -96,6 +96,6 @@ public class UserController {
             users.setUsers(usersList);
             MarshalController.setUsers(users);
             return "redirect:/admin";
-        }else return "redirect:/error";
+        }else return "redirect:/errorpage";
     }
 }

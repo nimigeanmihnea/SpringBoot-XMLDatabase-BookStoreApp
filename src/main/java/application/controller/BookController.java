@@ -59,7 +59,7 @@ public class BookController {
             books.setBooks(bookList);
             MarshalController.setBooks(books);
             return "redirect:/admin";
-        }else return "redirect:/error";
+        }else return "redirect:/errorpagepage";
     }
 
     @RequestMapping(value = "/view", method = RequestMethod.GET)
@@ -124,6 +124,6 @@ public class BookController {
             books.setBooks(bookList);
             MarshalController.setBooks(books);
             return "redirect:/admin";
-        }else return "redirect:/error";
+        }else return "redirect:/errorpage";
     }
 }

@@ -53,7 +53,7 @@ public class EditController {
             model.addAttribute("book", book);
             return "/admin/edit";
         }
-        return "redirect:/error";
+        return "redirect:/errorpage";
     }
 
     @RequestMapping(value = "/edituser", method = RequestMethod.GET)
@@ -75,7 +75,7 @@ public class EditController {
             model.addAttribute("user", user);
             return "/admin/edituser";
         }
-        return "redirect:/error";
+        return "redirect:/errorpage";
     }
 
     @RequestMapping(value = "/edituser", method = RequestMethod.POST)
@@ -101,7 +101,7 @@ public class EditController {
             MarshalController.setUsers(users);
             return "redirect:/admin";
 
-        }else return "redirect:/error";
+        }else return "redirect:/errorpage";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
@@ -123,6 +123,6 @@ public class EditController {
             books.setBooks(bookList);
             MarshalController.setBooks(books);
             return "redirect:/admin";
-        }else return "redirect:/error";
+        }else return "redirect:/errorpage";
     }
 }
