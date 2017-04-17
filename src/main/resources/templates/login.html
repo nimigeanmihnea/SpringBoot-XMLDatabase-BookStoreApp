@@ -9,6 +9,9 @@
 </head>
 <body>
 <div class="login">
+    <div th:if="${param.error}" align="center">
+        Invalid credentials! Please check again.
+    </div>
     <header class="login-header"><span class="text">Login</span><span class="loader"></span></header>
     <form class="login-form" th:action="@{/login}" method="post">
         <input class="login-input" name="user" type="text" placeholder="Username"/>

@@ -14,25 +14,8 @@
     <div class="content">
 
         <ul id="nav">
-            <li><a th:href="@{/home}">Home</a></li>
-            <li><a href="#" class="current">Sell</a>
-                <ul class="subs">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                </ul>
-            </li>
-            <li><a href="#">jQuery/JS</a>
-                <ul class="subs">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                </ul>
-            </li>
-            <li><a href="#">PHP</a></li>
-            <li><a href="#">MySQL</a></li>
+            <li><a th:href="@{/home}" class="current">Home</a></li>
+          
             <li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/admin}">Admin</a></li>
         </ul>
     </div>

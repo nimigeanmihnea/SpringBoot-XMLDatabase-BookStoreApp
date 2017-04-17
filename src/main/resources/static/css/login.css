@@ -4,7 +4,7 @@
 }
 
 body {
-    background: #bababa url("../images/orn.jpg");
+    background: black;
     font: 100%/1 "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -44,7 +44,7 @@ body {
     z-index: 1;
     width: 20rem;
     height: 20rem;
-    background: #bababa url("../images/orn.jpg");
+    background: black;
     transition: width 0.5s ease-in-out;
 }
 .login-header > .text {

@@ -4,21 +4,21 @@
         <title>The World as Will and Representation</title>
         <author>Arthur Schopenhauer</author>
         <genre>Philosophy</genre>
-        <quantity>23</quantity>
+        <quantity>0</quantity>
         <price>199.89</price>
     </Book>
     <Book id="2">
         <title>Trilogia Cunoasterii</title>
         <author>Lucian Blaga</author>
         <genre>Philosophy</genre>
-        <quantity>215</quantity>
+        <quantity>0</quantity>
         <price>59.99</price>
     </Book>
     <Book id="3">
         <title>When Nietzsche Wept</title>
         <author>Irvin D. Yalom</author>
         <genre>Novel</genre>
-        <quantity>96</quantity>
+        <quantity>95</quantity>
         <price>36.0</price>
     </Book>
     <Book id="951">

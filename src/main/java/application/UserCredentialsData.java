@@ -44,6 +44,6 @@ public class UserCredentialsData implements UserDetailsService {
         }
 
         user.isEnabled();
-        return new User(user.getUsername(),user.getPassword(),user.getRole());
+        return new User(user.getUsername(), user.getPassword(), user.getRole());
     }
 }

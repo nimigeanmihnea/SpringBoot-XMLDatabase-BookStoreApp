@@ -1,1 +1,117 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Sales><Sale id="c552819a-ac26-47c3-b4b1-a267828a78b3"><date>11-50-2017 07:50:32</date><book id="1"><title>The Shining</title><author>Stephen King</author><genre>Science Fiction</genre><quantity>50</quantity><price>70.0</price></book><quantity>1</quantity><user id="1"><name>Nimigean Mihnea</name><email>x@gmail.com</email><username>admin</username><password>admin</password><role>ROLE_ADMIN</role></user><buyer>x</buyer></Sale><Sale id="01d13e6f-3274-44b9-a6cf-224717d178c8"><date>11-54-2017 07:54:41</date><book id="2"><title>The World as Will and Representation</title><author>Arthur Schopenhauer</author><genre>Philosophy</genre><quantity>20</quantity><price>190.0</price></book><quantity>2</quantity><user id="1"><name>Nimigean Mihnea</name><email>x@gmail.com</email><username>admin</username><password>admin</password><role>ROLE_ADMIN</role></user><buyer>x</buyer></Sale><Sale id="e0e53e3c-da5c-4b64-a960-1c6b3d2784e8"><date>11-00-2017 08:00:45</date><book id="2"><title>The World as Will and Representation</title><author>Arthur Schopenhauer</author><genre>Philosophy</genre><quantity>19</quantity><price>190.0</price></book><quantity>1</quantity><user id="1"><name>Nimigean Mihnea</name><email>x@gmail.com</email><username>admin</username><password>admin</password><role>ROLE_ADMIN</role></user><buyer>x</buyer></Sale><Sale id="b9e44800-bba1-44a4-b53d-b95afbade9a0"><date>11-38-2017 08:38:56</date><book id="1"><title>The Shining</title><author>Stephen King</author><genre>Science-Fiction</genre><quantity>214</quantity><price>70.0</price></book><quantity>1</quantity><user id="1"><name>Nimigean Mihnea</name><email>x@gmail.com</email><username>admin</username><password>admin</password><role>ROLE_ADMIN</role></user><buyer>x</buyer></Sale><Sale id="1bf89cc9-1067-4e00-8899-1ab906cef71c"><date>13-27-2017 12:27:24</date><book id="4"><title>When Nietzsche Wept</title><author>Irvin D. Yalom</author><genre>Novel</genre><quantity>96</quantity><price>36.0</price></book><quantity>4</quantity><user id="1"><name>Nimigean Mihnea</name><email>x@gmail.com</email><username>admin</username><password>admin</password><role>ROLE_ADMIN</role></user><buyer>Lu Paul</buyer></Sale></Sales>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Sales>
+    <Sale id="c552819a-ac26-47c3-b4b1-a267828a78b3">
+        <date>11-50-2017 07:50:32</date>
+        <book id="1">
+            <title>The Shining</title>
+            <author>Stephen King</author>
+            <genre>Science Fiction</genre>
+            <quantity>50</quantity>
+            <price>70.0</price>
+        </book>
+        <quantity>1</quantity>
+        <user id="1">
+            <name>Nimigean Mihnea</name>
+            <email>x@gmail.com</email>
+            <username>admin</username>
+            <password>admin</password>
+            <role>ROLE_ADMIN</role>
+        </user>
+        <buyer>x</buyer>
+    </Sale>
+    <Sale id="01d13e6f-3274-44b9-a6cf-224717d178c8">
+        <date>11-54-2017 07:54:41</date>
+        <book id="2">
+            <title>The World as Will and Representation</title>
+            <author>Arthur Schopenhauer</author>
+            <genre>Philosophy</genre>
+            <quantity>20</quantity>
+            <price>190.0</price>
+        </book>
+        <quantity>2</quantity>
+        <user id="1">
+            <name>Nimigean Mihnea</name>
+            <email>x@gmail.com</email>
+            <username>admin</username>
+            <password>admin</password>
+            <role>ROLE_ADMIN</role>
+        </user>
+        <buyer>x</buyer>
+    </Sale>
+    <Sale id="e0e53e3c-da5c-4b64-a960-1c6b3d2784e8">
+        <date>11-00-2017 08:00:45</date>
+        <book id="2">
+            <title>The World as Will and Representation</title>
+            <author>Arthur Schopenhauer</author>
+            <genre>Philosophy</genre>
+            <quantity>19</quantity>
+            <price>190.0</price>
+        </book>
+        <quantity>1</quantity>
+        <user id="1">
+            <name>Nimigean Mihnea</name>
+            <email>x@gmail.com</email>
+            <username>admin</username>
+            <password>admin</password>
+            <role>ROLE_ADMIN</role>
+        </user>
+        <buyer>x</buyer>
+    </Sale>
+    <Sale id="b9e44800-bba1-44a4-b53d-b95afbade9a0">
+        <date>11-38-2017 08:38:56</date>
+        <book id="1">
+            <title>The Shining</title>
+            <author>Stephen King</author>
+            <genre>Science-Fiction</genre>
+            <quantity>214</quantity>
+            <price>70.0</price>
+        </book>
+        <quantity>1</quantity>
+        <user id="1">
+            <name>Nimigean Mihnea</name>
+            <email>x@gmail.com</email>
+            <username>admin</username>
+            <password>admin</password>
+            <role>ROLE_ADMIN</role>
+        </user>
+        <buyer>x</buyer>
+    </Sale>
+    <Sale id="1bf89cc9-1067-4e00-8899-1ab906cef71c">
+        <date>13-27-2017 12:27:24</date>
+        <book id="4">
+            <title>When Nietzsche Wept</title>
+            <author>Irvin D. Yalom</author>
+            <genre>Novel</genre>
+            <quantity>96</quantity>
+            <price>36.0</price>
+        </book>
+        <quantity>4</quantity>
+        <user id="1">
+            <name>Nimigean Mihnea</name>
+            <email>x@gmail.com</email>
+            <username>admin</username>
+            <password>admin</password>
+            <role>ROLE_ADMIN</role>
+        </user>
+        <buyer>Lu Paul</buyer>
+    </Sale>
+    <Sale id="1ca84944-4994-4856-a9d9-a16ac156a7be">
+        <date>17-06-2017 05:06:10</date>
+        <book id="3">
+            <title>When Nietzsche Wept</title>
+            <author>Irvin D. Yalom</author>
+            <genre>Novel</genre>
+            <quantity>94</quantity>
+            <price>36.0</price>
+        </book>
+        <quantity>2</quantity>
+        <user id="2">
+            <name>Nimigean Mihnea</name>
+            <email>x@gmail.com</email>
+            <username>user</username>
+            <password>user</password>
+            <role>ROLE_USER</role>
+        </user>
+        <buyer>Mihnea</buyer>
+    </Sale>
+</Sales>
