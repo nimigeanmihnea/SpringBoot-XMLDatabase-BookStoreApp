@@ -30,8 +30,8 @@
         </book>
         <quantity>2</quantity>
         <user id="1">
-            <name>Nimigean Mihnea</name>
-            <email>x@gmail.com</email>
+            <name>admin</name>
+            <email>xa@gmail.com</email>
             <username>admin</username>
             <password>admin</password>
             <role>ROLE_ADMIN</role>
@@ -49,8 +49,8 @@
         </book>
         <quantity>1</quantity>
         <user id="1">
-            <name>Nimigean Mihnea</name>
-            <email>x@gmail.com</email>
+            <name>admin</name>
+            <email>xa@gmail.com</email>
             <username>admin</username>
             <password>admin</password>
             <role>ROLE_ADMIN</role>
@@ -68,8 +68,8 @@
         </book>
         <quantity>1</quantity>
         <user id="1">
-            <name>Nimigean Mihnea</name>
-            <email>x@gmail.com</email>
+            <name>admin</name>
+            <email>xa@gmail.com</email>
             <username>admin</username>
             <password>admin</password>
             <role>ROLE_ADMIN</role>
@@ -87,13 +87,13 @@
         </book>
         <quantity>4</quantity>
         <user id="1">
-            <name>Nimigean Mihnea</name>
-            <email>x@gmail.com</email>
+            <name>admin</name>
+            <email>xa@gmail.com</email>
             <username>admin</username>
             <password>admin</password>
             <role>ROLE_ADMIN</role>
         </user>
-        <buyer>Lu Paul</buyer>
+        <buyer>x</buyer>
     </Sale>
     <Sale id="1ca84944-4994-4856-a9d9-a16ac156a7be">
         <date>17-06-2017 05:06:10</date>
@@ -106,12 +106,12 @@
         </book>
         <quantity>2</quantity>
         <user id="2">
-            <name>Nimigean Mihnea</name>
+            <name>user</name>
             <email>x@gmail.com</email>
             <username>user</username>
             <password>user</password>
             <role>ROLE_USER</role>
         </user>
-        <buyer>Mihnea</buyer>
+        <buyer>x</buyer>
     </Sale>
 </Sales>

@@ -46,6 +46,5 @@ public class  SecureLogin extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws  Exception{
         auth.userDetailsService(this.userCredentialsData);
-        //auth.inMemoryAuthentication().withUser("admin").password("admin");
     }
 }
